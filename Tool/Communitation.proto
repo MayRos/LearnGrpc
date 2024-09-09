@@ -1,0 +1,14 @@
+syntax = "proto3";
+package Demo;
+service Demo{
+	rpc Service1(Request)returns(Response){}
+	rpc Service2(stream Request)returns(Response){}
+	rpc Service3(Request)returns(stream Response){}
+	rpc Service4(stream Request)returns(stream Response){}
+}
+message Request{
+	string name=1;
+}
+message Response{
+	string msg=1;
+}
